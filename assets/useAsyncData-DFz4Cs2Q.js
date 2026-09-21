@@ -1,0 +1,1 @@
+import{r as e}from"./react-v1IHIw1K.js";function d(n,u){const[l,t]=e.useState(!0),[o,c]=e.useState(null),[f,a]=e.useState(null);return e.useEffect(()=>{let r=!1;return t(!0),a(null),Promise.resolve().then(()=>n()).then(s=>{r||(c(s),t(!1))}).catch(s=>{r||(a(s),t(!1))}),()=>{r=!0}},u),{loading:l,data:o,error:f}}export{d as u};
