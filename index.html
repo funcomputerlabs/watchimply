@@ -16,11 +16,29 @@
     <link rel="apple-touch-icon" href="/watchimply/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/watchimply/manifest.json" />
     <title>WATCHIMPLY — YouTube, simplificado</title>
+    <style>
+      html, body, #root { min-height: 100%; background: #0b0d12; color: #eef3fb; margin: 0; font-family: "Segoe UI", system-ui, sans-serif; }
+      .boot { padding: 48px 24px; text-align: center; }
+    </style>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function (regs) {
+          regs.forEach(function (reg) { reg.unregister(); });
+        });
+      }
+      if (window.caches) {
+        caches.keys().then(function (keys) {
+          keys.forEach(function (key) {
+            if (String(key).indexOf('watchimply') === 0) caches.delete(key);
+          });
+        });
+      }
+    </script>
     <script type="module" crossorigin src="/watchimply/assets/index-SO266TqJ.js"></script>
     <link rel="modulepreload" crossorigin href="/watchimply/assets/react-v1IHIw1K.js">
     <link rel="stylesheet" crossorigin href="/watchimply/assets/index-BXunG4jT.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><p class="boot">Cargando Watchimply…</p></div>
   </body>
 </html>
