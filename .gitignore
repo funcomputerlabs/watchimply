@@ -1,0 +1,11 @@
+node_modules
+dist
+dist-pages
+.DS_Store
+.env
+.env.*
+!.env.example
+.vscode
+.idea
+*.log
+.netlify

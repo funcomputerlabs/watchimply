@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>WATCHIMPLY</title>
+    <script>
+      (function () {
+        var parts = location.pathname.split('/').filter(Boolean);
+        var base = parts.length ? '/' + parts[0] + '/' : '/';
+        location.replace(base + '#/');
+      })();
+    </script>
+  </head>
+  <body>Redirigiendo a Watchimply…</body>
+</html>
