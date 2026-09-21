@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: pages
@@ -40,3 +41,17 @@ jobs:
           folder: dist
           branch: gh-pages
           clean: true
+
+      - name: Enable GitHub Pages on gh-pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh api "repos/${GITHUB_REPOSITORY}/pages" >/dev/null 2>&1; then
+            gh api --method PUT "repos/${GITHUB_REPOSITORY}/pages" \
+              -f "source[branch]=gh-pages" \
+              -f "source[path]=/" || true
+          else
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/pages" \
+              -f "source[branch]=gh-pages" \
+              -f "source[path]=/"
+          fi
