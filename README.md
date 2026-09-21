@@ -57,8 +57,9 @@ npm run preview
 
 1. Sube el código a `main`.
 2. **Settings → Secrets and variables → Actions**: secreto `VITE_YOUTUBE_API_KEY`.
-3. **Settings → Pages → Source: GitHub Actions**.
-4. El workflow usa `BASE_PATH: /NOMBRE-DEL-REPO/`.
+3. **Settings → Pages → Build and deployment → Source: Deploy from a branch**.
+   Branch: `gh-pages` / folder: `/ (root)`.
+4. Cada push a `main` actualiza `gh-pages`. El workflow usa `BASE_PATH: /NOMBRE-DEL-REPO/`.
 
 Sitio esperado: `https://funcomputerlabs.github.io/watchimply/`
 
