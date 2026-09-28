@@ -39,6 +39,9 @@ export function TopBar({ onMenu, theme, onToggleTheme }) {
         />
         <button type="submit">Buscar</button>
       </form>
+      <Link to="/music" className="ghost-btn music-link">
+        Music
+      </Link>
       <button
         type="button"
         className="icon-btn"

@@ -12,6 +12,7 @@ const LaterPage = lazy(() => import('./pages/LibraryPages.jsx').then((m) => ({ d
 const LikesPage = lazy(() => import('./pages/LibraryPages.jsx').then((m) => ({ default: m.LikesPage })));
 const SubscriptionsPage = lazy(() => import('./pages/SubscriptionsPage.jsx').then((m) => ({ default: m.SubscriptionsPage })));
 const ProfilePage = lazy(() => import('./pages/ProfilePage.jsx').then((m) => ({ default: m.ProfilePage })));
+const MusicPage = lazy(() => import('./pages/MusicPage.jsx').then((m) => ({ default: m.MusicPage })));
 
 function Fallback() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
           <Route path="likes" element={<LikesPage />} />
           <Route path="subscriptions" element={<SubscriptionsPage />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="music" element={<MusicPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

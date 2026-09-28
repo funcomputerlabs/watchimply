@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import { DEMO_USER } from '../data/videos.js';
 import { useLibrary } from '../hooks/useLibrary.jsx';
+import { useMusic } from '../hooks/useMusic.jsx';
 import { initials } from '../utils/format.js';
 
 export function ProfilePage() {
   const { history, later, likes } = useLibrary();
+  const { queue } = useMusic();
 
   return (
     <div className="page">
@@ -15,13 +17,21 @@ export function ProfilePage() {
         <div>
           <p className="kicker">Perfil local</p>
           <h1>{DEMO_USER.name}</h1>
-          <p className="muted">{DEMO_USER.handle} · {DEMO_USER.bio}</p>
+          <p className="muted">
+            {DEMO_USER.handle} · {DEMO_USER.bio}
+          </p>
+          <div className="card-actions">
+            <Link to="/music" className="ghost-btn">
+              Watchimply Music
+            </Link>
+          </div>
         </div>
       </section>
       <div className="stats-row">
         <Stat to="/history" label="Vídeos vistos" value={history.length} />
         <Stat to="/later" label="Guardados" value={later.length} />
         <Stat to="/likes" label="Me gusta" value={likes.length} />
+        <Stat to="/music" label="Playlist Music" value={queue.length} />
       </div>
     </div>
   );

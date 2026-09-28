@@ -4,6 +4,7 @@ import { Logo } from './Logo.jsx';
 const LINKS = [
   { to: '/', label: 'Inicio', icon: HomeIcon },
   { to: '/trending', label: 'Tendencias', icon: TrendIcon },
+  { to: '/music', label: 'Watchimply Music', icon: MusicIcon },
   { to: '/subscriptions', label: 'Suscripciones', icon: SubIcon },
   { to: '/history', label: 'Historial', icon: HistoryIcon },
   { to: '/later', label: 'Ver más tarde', icon: LaterIcon },
@@ -49,6 +50,16 @@ function TrendIcon() {
   return (
     <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
       <path d="M4 17 10 11l4 4 6-8" />
+    </svg>
+  );
+}
+
+function MusicIcon() {
+  return (
+    <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <path d="M9 18V5l12-2v13" />
+      <circle cx="6" cy="18" r="3" />
+      <circle cx="18" cy="16" r="3" />
     </svg>
   );
 }

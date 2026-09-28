@@ -184,6 +184,19 @@ export async function fetchVideo(id) {
   }
 }
 
+export async function fetchMusic(query = '') {
+  const q = query.trim();
+  if (!isYouTubeLive()) {
+    return searchDemo(VIDEOS, q, 'music');
+  }
+  if (q) return fetchSearch(q, 'music');
+  try {
+    return await fetchTrending('music');
+  } catch {
+    return fetchSearch('música', 'music');
+  }
+}
+
 export async function fetchRelated(video) {
   if (!video) return [];
   if (!isYouTubeLive()) {

@@ -11,8 +11,8 @@ WATCHIMPLY **no pertenece a YouTube ni a Google**. No copia el branding oficial.
 - Tendencias reales (`videos.list?chart=mostPopular`)
 - Búsqueda real (`search.list`) por título, canal y categoría
 - Reproductor embebido oficial (`youtube-nocookie`)
-- Historial, Ver más tarde y Me gusta en `localStorage`
-- Perfil ficticio local (sin autenticación)
+- Watchimply Music: catálogo musical, playlist y reproducción continua
+- Historial, Ver más tarde, Me gusta y playlist de Music en `localStorage`
 - Tema oscuro por defecto y tema claro
 - PWA: `manifest.json`, service worker e iconos
 - Hash routing compatible con GitHub Pages (`/watchimply/` o raíz)
@@ -23,7 +23,7 @@ WATCHIMPLY **no pertenece a YouTube ni a Google**. No copia el branding oficial.
 - React 18 + Vite 5
 - React Router (`HashRouter`)
 - YouTube Data API v3 (clave de cliente restringida por HTTP referrer)
-- Sin backend propio, sin Supabase y sin Firebase
+- Sin backend propio ni cuentas de usuario
 
 ## Cómo ejecutar en local
 
@@ -72,8 +72,8 @@ Sitio esperado: `https://funcomputerlabs.github.io/watchimply/`
 ## Limitaciones
 
 - En un sitio estático la clave de API **queda en el JavaScript**. Restríngela por referrer; no uses una clave de servidor.
-- No hay comentarios ni login de Google.
-- Historial y listas son locales.
+- No hay comentarios ni cuentas.
+- Historial, listas y playlist de Music son locales.
 - No hay descarga ni omisión de anuncios.
 
 ## Licencia y marca
